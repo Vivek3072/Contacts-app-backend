@@ -7,6 +7,10 @@ const {
   updateContact,
   deleteContact,
 } = require("../controllers/ContactController");
+const validateToken = require("../middleware/ValidateTokenHandler");
+
+// This is to make all the routes protected(i.e, only authorized  users can have access to these routes )
+router.use(validateToken);
 
 // router.route("/").get(getContacts);
 // router.route("/").post(createContact);
