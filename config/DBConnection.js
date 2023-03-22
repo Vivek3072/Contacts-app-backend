@@ -4,7 +4,7 @@ var colors = require('colors');
 
 const connectDb = async () => {
   try {
-    const connect = await mongoose.connect(process.env.CONNECTION_STRING);
+    const connect = await mongoose.connect(process.env.CONNECTION_STRING.toString());
     console.log("Database connected:- ".bgMagenta);
     console.log("Connection host : ".rainbow, connect.connection.host);
     console.log("Database name : ".rainbow, connect.connection.name);
